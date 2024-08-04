@@ -38,7 +38,7 @@ public class HeroCatHandler extends ChannelInboundHandlerAdapter {
             // 从请求中解析出要访问的Servlet名称
             //aaa/bbb/twoservlet?name=aa
             String servletName = uri.substring(uri.lastIndexOf("/") + 1,
-                    uri.indexOf("?"));
+                    uri.indexOf("?")).toLowerCase();
             HeroServlet heroServlet = new DefaultHeroServlet();
             if (nameToServletMap.containsKey(servletName)) {
                 heroServlet = nameToServletMap.get(servletName);
